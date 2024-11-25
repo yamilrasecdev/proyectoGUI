@@ -23,6 +23,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JMenuItem mntmNewMenuItem;
 	private JMenuItem mntmNewMenuItem_1;
 	private JDesktopPane desktopPane;
+	private JMenuItem mntmNewMenuItem_2;
 
 	/**
 	 * Launch the application.
@@ -44,6 +45,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	 * Create the frame.
 	 */
 	public MainFrame() {
+		setTitle("Aplicacion Proyecto Cibertec ....");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1027, 657);
 		
@@ -60,6 +62,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		mntmNewMenuItem_1 = new JMenuItem("Configurar Ofertas");
 		mntmNewMenuItem_1.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_1);
+		
+		mntmNewMenuItem_2 = new JMenuItem("Resultados");
+		mntmNewMenuItem_2.addActionListener(this);
+		mnNewMenu.add(mntmNewMenuItem_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -71,6 +77,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmNewMenuItem_2) {
+			actionPerformedMntmNewMenuItem_2(e);
+		}
 		if (e.getSource() == mntmNewMenuItem_1) {
 			actionPerformedMntmNewMenuItem_1(e);
 		}
@@ -90,5 +99,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 	protected void actionPerformedMntmNewMenuItem_1(ActionEvent e) {
 		abrirFormulario(new MantenimientoOfertas());
+	}
+	protected void actionPerformedMntmNewMenuItem_2(ActionEvent e) {
+		abrirFormulario(new FormularioResultados());
 	}
 }

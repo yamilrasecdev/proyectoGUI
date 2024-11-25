@@ -30,6 +30,10 @@ public class MantenimientoOfertas extends JInternalFrame {
 	public MantenimientoOfertas() {
 		setTitle("Mantenimiento Ofertas");
 		setBounds(100, 100, 450, 300);
+		setClosable(true);		
+		setMaximizable (true);
+		setIconifiable(true);
+		setResizable(true);
 
 	}
 
