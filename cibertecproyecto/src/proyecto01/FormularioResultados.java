@@ -44,12 +44,31 @@ public class FormularioResultados extends JInternalFrame {
 
     // Método para agregar texto al área de resultados
     private void agregarResultado() {
+    	//MainFrame.modelo01="Indurama";
+		//System.out.println("modelo01 Formulario Interno: " + MainFrame.modelo01);
+
         String texto = campoTexto.getText();
         if (!texto.isEmpty()) {
             areaResultados.append(texto + "\n"); // Añade el texto con un salto de línea
             campoTexto.setText(""); // Limpiar campo de entrada
+            MainFrame.modelo01=texto;
+            System.out.println("modelo01 Formulario Interno: " + MainFrame.modelo01);
+            
         } else {
             JOptionPane.showMessageDialog(this, "El campo está vacío.", "Advertencia", JOptionPane.WARNING_MESSAGE);
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

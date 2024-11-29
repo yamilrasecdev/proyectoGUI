@@ -24,7 +24,10 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JMenuItem mntmNewMenuItem_1;
 	private JDesktopPane desktopPane;
 	private JMenuItem mntmNewMenuItem_2;
-
+	private JMenuItem mntmNewMenuItem_3;
+	
+	public static String modelo01="Bosh";
+	
 	/**
 	 * Launch the application.
 	 */
@@ -66,6 +69,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		mntmNewMenuItem_2 = new JMenuItem("Resultados");
 		mntmNewMenuItem_2.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_2);
+		
+		mntmNewMenuItem_3 = new JMenuItem("Papel");
+		mntmNewMenuItem_3.addActionListener(this);
+		mnNewMenu.add(mntmNewMenuItem_3);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -74,9 +81,14 @@ public class MainFrame extends JFrame implements ActionListener {
 		
 		desktopPane = new JDesktopPane();
 		contentPane.add(desktopPane, BorderLayout.CENTER);
+		
+		System.out.println("modelo01 MainFrame: " + modelo01);
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmNewMenuItem_3) {
+			actionPerformedMntmNewMenuItem_3(e);
+		}
 		if (e.getSource() == mntmNewMenuItem_2) {
 			actionPerformedMntmNewMenuItem_2(e);
 		}
@@ -102,5 +114,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmNewMenuItem_2(ActionEvent e) {
 		abrirFormulario(new FormularioResultados());
+	}
+	protected void actionPerformedMntmNewMenuItem_3(ActionEvent e) {
+		abrirFormulario(new Papel());
+
 	}
 }
