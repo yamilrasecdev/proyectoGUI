@@ -83,8 +83,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		desktopPane = new JDesktopPane();
 		contentPane.add(desktopPane, BorderLayout.CENTER);
 		
-		System.out.println("En MainFrame el modelo01 : " + modelo01);
-		System.out.println("En MainFrame la  variableGlobal : " + this.variableGlobal);
+		System.out.println("Imprimo valor de modelo01 en el MainFrame :" + this.modelo01);
+		System.out.println("Imprimo valor de variableGlobal en el MainFrame:" + this.variableGlobal);
 	}
 
 	public void actionPerformed(ActionEvent e) {

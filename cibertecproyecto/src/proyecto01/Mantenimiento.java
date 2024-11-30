@@ -126,10 +126,21 @@ public class Mantenimiento extends JInternalFrame implements ActionListener {
 			actionPerformedGrabar(e);
 		}
 	}
-	protected void actionPerformedGrabar(ActionEvent e) {
-		///System.out.println("valor de modelo 01:" + MainFrame.modelo01);
+	protected void actionPerformedGrabar(ActionEvent e) {		
+		////Forma 1		
+		System.out.println("valor de modelo01 de MainFrame en boton del form mantenimiento antes de actualizar:" + MainFrame.modelo01);		
+		MainFrame.modelo01="Cocina Peru";
+		System.out.println("valor de modelo01 de MainFrame en boton del form mantenimiento despues de actualizar:" + MainFrame.modelo01);
+		
+		
+		////Forma 2
+		//Imprimo  Variable global compartida en boton procesar antes de actualizar
+		System.out.println("valor de variableGlobal en boton del form mantenimiento antes de actualizar:" + mainframeLocal.variableGlobal);
+
+		//actualizo valor de variableGlobal compartida
 		mainframeLocal.variableGlobal="Cocina LG";
-		System.out.println("variableGlobal en boton del form mantenimiento :" + mainframeLocal.variableGlobal);
+		//Imprimo  Variable global compartida en boton procesar luego de actualizar
+		System.out.println("valor de variableGlobal en boton del form mantenimiento despues de actualizar:" + mainframeLocal.variableGlobal);
 
 	}
 }
