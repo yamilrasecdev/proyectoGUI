@@ -27,6 +27,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	private JMenuItem mntmNewMenuItem_3;
 	
 	public static String modelo01="Bosh";
+	public String variableGlobal="Cocina Surge";
 	
 	/**
 	 * Launch the application.
@@ -82,7 +83,8 @@ public class MainFrame extends JFrame implements ActionListener {
 		desktopPane = new JDesktopPane();
 		contentPane.add(desktopPane, BorderLayout.CENTER);
 		
-		System.out.println("modelo01 MainFrame: " + modelo01);
+		System.out.println("En MainFrame el modelo01 : " + modelo01);
+		System.out.println("En MainFrame la  variableGlobal : " + this.variableGlobal);
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -100,7 +102,7 @@ public class MainFrame extends JFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedMntmNewMenuItem(ActionEvent e) {
-		abrirFormulario(new Mantenimiento());
+		abrirFormulario(new Mantenimiento(this));
 	}
 	
 	//Metodo para abrir formularioos

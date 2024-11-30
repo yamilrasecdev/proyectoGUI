@@ -38,27 +38,17 @@ public class Mantenimiento extends JInternalFrame implements ActionListener {
 	private JLabel lblNewLabel_1;
 	private JLabel lblContrasea;
 	private Panel panel;
+	
+	private MainFrame mainframeLocal;//agrego el atributo MainFrame para crear un formulario mantenimiento
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Mantenimiento frame = new Mantenimiento();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	
+	
 	/**
 	 * Create the frame.
 	 */
-	public Mantenimiento() {
+	//public Mantenimiento() {
+	//Agrego un MainFrame en el constructor del Mantenimiento
+	public Mantenimiento(MainFrame MymainframeLocal) {
 		setTitle("Mantenimiento Productos");
 		setBounds(100, 100, 682, 470);
 		setClosable(true);		
@@ -123,6 +113,12 @@ public class Mantenimiento extends JInternalFrame implements ActionListener {
 		rdbtnNewRadioButton = new JRadioButton("Nuevo");
 		rdbtnNewRadioButton.setBounds(117, 143, 109, 23);
 		panel.add(rdbtnNewRadioButton);
+		
+		
+		//Asigno al atributo mainframeLocal del formulario
+		this.mainframeLocal=MymainframeLocal;
+		System.out.println("variableGlobal en constructor de Mantenimiento :" + mainframeLocal.variableGlobal);
+
 
 	}
 	public void actionPerformed(ActionEvent e) {
@@ -131,5 +127,9 @@ public class Mantenimiento extends JInternalFrame implements ActionListener {
 		}
 	}
 	protected void actionPerformedGrabar(ActionEvent e) {
+		///System.out.println("valor de modelo 01:" + MainFrame.modelo01);
+		mainframeLocal.variableGlobal="Cocina LG";
+		System.out.println("variableGlobal en boton del form mantenimiento :" + mainframeLocal.variableGlobal);
+
 	}
 }
