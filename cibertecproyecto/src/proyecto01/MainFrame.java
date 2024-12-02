@@ -28,6 +28,7 @@ public class MainFrame extends JFrame implements ActionListener {
 	
 	public static String modelo01="Bosh";
 	public String variableGlobal="Cocina Surge";
+	private JMenuItem mntmNewMenuItem_4;
 	
 	/**
 	 * Launch the application.
@@ -74,6 +75,10 @@ public class MainFrame extends JFrame implements ActionListener {
 		mntmNewMenuItem_3 = new JMenuItem("Papel");
 		mntmNewMenuItem_3.addActionListener(this);
 		mnNewMenu.add(mntmNewMenuItem_3);
+		
+		mntmNewMenuItem_4 = new JMenuItem("Mantenimiento interno");
+		mntmNewMenuItem_4.addActionListener(this);
+		mnNewMenu.add(mntmNewMenuItem_4);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -88,6 +93,9 @@ public class MainFrame extends JFrame implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == mntmNewMenuItem_4) {
+			actionPerformedMntmNewMenuItem_4(e);
+		}
 		if (e.getSource() == mntmNewMenuItem_3) {
 			actionPerformedMntmNewMenuItem_3(e);
 		}
@@ -120,5 +128,8 @@ public class MainFrame extends JFrame implements ActionListener {
 	protected void actionPerformedMntmNewMenuItem_3(ActionEvent e) {
 		abrirFormulario(new Papel());
 
+	}
+	protected void actionPerformedMntmNewMenuItem_4(ActionEvent e) {
+		abrirFormulario(new MantenimientoInterno(this));
 	}
 }
